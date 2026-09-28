@@ -1,0 +1,15 @@
+/* 사이트 전체의 색상·글꼴은 이 파일에서 조정합니다. */
+:root {
+  --ink: #192c3c;
+  --muted: #586875;
+  --accent: #2459a6;
+  --line: #dce2e6;
+  --paper: #fdfcf9;
+  --panel: #f0f3f5;
+  --font-sans: var(--font-inter), "Helvetica Neue", Arial, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  --measure: 66ch;
+  --coral-ink: #953829; --coral-bg: #fbe9e3;
+  --teal-ink: #176759; --teal-bg: #e3f2ed;
+  --violet-ink: #65429a; --violet-bg: #eee7f8;
+  --blue-ink: #2459a6; --blue-bg: #e8effb;
+}
