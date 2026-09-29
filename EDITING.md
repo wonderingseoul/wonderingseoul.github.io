@@ -158,3 +158,8 @@
 - Publications 메뉴와 섹션명을 통일했습니다. 연도별 카드에 티저, 제목, 저자, 학회·상태, 주제, 자료 링크 순으로 배치합니다. PDF CV의 서지 내용은 변경하지 않았습니다.
 - 연구 관심사는 현재 방향을 나타내는 텍스트입니다. 미공개 작업을 설명하는 도식이나 빈 Research Roadmap 영역은 만들지 않았습니다.
 
+
+## v0.13.1: Home 메뉴와 상태 구분선
+
+- 첫 메뉴 Home은 `content/navigation.ts`의 `homeNavigation`에서 이름과 노출 여부를 수정합니다. `/#home`은 메인 프로필로 이동합니다.
+- 논문 상태의 `Status | Accepted` 구분선은 `components/publication-list.tsx`, 색상은 `app/theme.css`의 `.publication-status-divider`에서 관리합니다.

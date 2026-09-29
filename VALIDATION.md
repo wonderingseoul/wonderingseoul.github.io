@@ -1,3 +1,10 @@
+# v0.13.1 validation
+
+- npm run build and npm run typecheck passed.
+- Home is the first navigation item and returns to the main profile from Home, CV and News. Verified at 320, 390, 768 and 1360px with no horizontal overflow or JavaScript errors.
+- Status separator is visible and aria-hidden; header and badge screenshots inspected.
+- Content and CV PDF unchanged. No remote deployment performed.
+
 # v0.13.0 validation
 
 - npm run build and npm run typecheck passed. No new project dependencies.

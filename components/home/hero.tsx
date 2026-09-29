@@ -9,6 +9,7 @@ export function Hero() {
     (process.env.NODE_ENV === "development" && site.showMediaSlots);
   return (
     <section
+      id="home"
       className={`profile-hero ${showPhotoArea ? "profile-hero--photo" : ""}`}
       aria-labelledby="hero-title"
     >

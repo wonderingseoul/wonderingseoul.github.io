@@ -2,7 +2,7 @@ import { newestFirst } from "./dates";
 // 콘텐츠와 화면을 연결하는 작은 모듈입니다. 일반적인 내용 수정은 content/에서 합니다.
 import { allProjects } from "@/content/projects";
 import { homeSections, selectedProjectSlugs } from "@/content/home";
-import { navigation } from "@/content/navigation";
+import { homeNavigation, navigation } from "@/content/navigation";
 import { publications } from "@/content/publications";
 import { news } from "@/content/news";
 import { site } from "@/content/site";
@@ -54,6 +54,7 @@ export const visibleHomeSections = homeSections.filter(
 
 // 상단 메뉴: 홈 섹션 앵커 + content/navigation.ts 항목.
 export const menuItems = [
+  ...[homeNavigation].filter((item) => item.enabled),
   ...visibleHomeSections
     .filter((section) => section.menuLabel)
     .map((section) => ({ label: section.menuLabel, href: `/#${section.id}` })),

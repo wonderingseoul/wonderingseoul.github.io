@@ -18,7 +18,7 @@ export function PublicationList({ compact = false }: { compact?: boolean }) {
             
             <h4>{p.title}</h4>
             <p className="publication-authors">{p.authors.map((author, index) => <span key={author}>{index > 0 && ", "}{site.authorNames.includes(author) ? <strong>{author}</strong> : author}</span>)}</p>
-            <div className="publication-venue-row"><p className="publication-venue"><em>{p.venueUrl ? <a href={p.venueUrl}>{p.venue}</a> : p.venue}</em></p>{p.status && <span className="publication-status"><span className="publication-status-label">Status</span>{p.status}</span>}</div>
+            <div className="publication-venue-row"><p className="publication-venue"><em>{p.venueUrl ? <a href={p.venueUrl}>{p.venue}</a> : p.venue}</em></p>{p.status && <span className="publication-status"><span className="publication-status-label">Status</span><span className="publication-status-divider" aria-hidden="true">|</span>{p.status}</span>}</div>
             <div className="publication-topics" aria-label="Research topics"><ResearchTags tags={p.tags} /></div>
             <ResourceLinks links={p.links} />
           </div>

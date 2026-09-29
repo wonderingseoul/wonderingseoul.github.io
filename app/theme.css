@@ -13,3 +13,5 @@
   --violet-ink: #65429a; --violet-bg: #eee7f8;
   --blue-ink: #2459a6; --blue-bg: #e8effb;
 }
+
+.publication-status-divider { color: #89939c; font-weight: 400; }
