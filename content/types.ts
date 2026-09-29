@@ -52,7 +52,7 @@ export type EducationEntry = {
   lab?: { name: string; url?: string };
 };
 export type NewsItem = { id: string; date: string; text: string; links?: ResourceLink[] };
-export type HomeSectionId = "news" | "publications" | "projects" | "about" | "contact";
+export type HomeSectionId = "news" | "publications" | "projects" | "contact";
 export type HomeSection = {
   id: HomeSectionId;
   enabled: boolean;

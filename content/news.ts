@@ -116,4 +116,4 @@ export const news: NewsItem[] = [
     ]
   }
 ];
-export const newsDisplay = {"limit":3,"archiveLabel":"Earlier news"};
+export const newsDisplay = {"limit":5,"archiveLabel":"View all news"};

@@ -46,7 +46,6 @@ const hasContent: Record<HomeSectionId, boolean> = {
   news: news.length > 0,
   publications: publications.length > 0,
   projects: selectedProjects.length > 0,
-  about: true,
   contact: true,
 };
 export const visibleHomeSections = homeSections.filter(

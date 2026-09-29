@@ -1,4 +1,4 @@
-# 수정 안내 (v0.12.1)
+# 수정 안내 (v0.13.0)
 
 ## 자주 하는 수정 — 여기부터 보세요
 
@@ -41,14 +41,14 @@
 `npm ci` 후 `npm run dev`를 실행하고 http://localhost:3000 을 엽니다. 배포 전에는 `npm run build`와 `npm run typecheck`로 확인합니다.
 
 ## 구조
-- 홈(`/`): 프로필 → News → Publications → Projects → About. 섹션 순서와 표시 여부는 `content/home.ts`의 `homeSections`.
+- 홈(`/`): 프로필(배경 소개 통합) → News → Publications → Projects. 섹션 순서와 표시 여부는 `content/home.ts`의 `homeSections`.
 - 프로젝트 상세(`/projects/슬러그/`): `content/projects/`의 파일 하나가 페이지 하나.
 - CV(`/cv/`): `content/cv.ts` + 논문 목록. `public/documents/cv.pdf`가 다운로드 파일.
 - 상단 메뉴는 홈 섹션의 `menuLabel`에서 자동으로 만들어지고, `content/navigation.ts` 항목(CV)이 뒤에 붙습니다.
 
 ## 파일별 수정 위치
 - `content/site.ts`: 이름, 한 줄 소속(role/affiliation), 첫 화면 소개(introduction), CV용 짧은 프로필(bio), 링크. 빈 링크는 자동으로 숨겨집니다. 이메일은 `links.email`에 주소만 적습니다.
-- `content/home.ts`: About 본문(aboutStory), 연구 관심사(research), 홈에 보일 프로젝트(selectedProjectSlugs).
+- `content/home.ts`: 프로필 배경 소개(profileBackground), 연구 관심사(research), 홈에 보일 프로젝트(selectedProjectSlugs).
 - `content/publications.ts`: 논문. 연도 내림차순으로 자동 정렬됩니다. 제목·저자·짧은 학회명만 표시하며, 초록·페이지 범위는 쓰지 않습니다. 아래 예시를 참고하세요.
 - `content/projects/`: 프로젝트. 새 작업은 `templates/project.ts`를 복사해 `index.ts`에 등록합니다. `visible: false`면 상세 페이지가 만들어지지 않고 링크도 사라집니다(단, 공개 저장소의 소스는 보입니다). 홈에 올리려면 `home.ts`의 `selectedProjectSlugs`에 slug를 추가합니다.
 - `content/cv.ts`: 학력·경력·수상. `visible: false`면 숨깁니다. `selected`는 현재 화면에서 쓰이지 않습니다.
@@ -58,7 +58,6 @@
 - 프로필 사진: `public/images/profile.jpg`에 두고 `content/site.ts`의 `portrait`에 `/images/profile.jpg`를 적습니다. 정사각형에 가까운 사진이 좋고, 화면에서는 160px(모바일 120px) 원형으로 잘려 보입니다.
 - 프로젝트 대표 그림: `content/projects/프로젝트명.ts`의 `image`, `imageAlt`, `imageFit`(contain/cover). 16:10 비율 기준. 영상은 `video`에 mp4 경로.
 - 프로젝트 본문 그림: `sections[]`의 `image`, `imageAlt`, `imageCaption`.
-- About 그림(선택): `content/home.ts`의 `aboutStory.image`, `imageAlt`, `imageCaption`. 컴포넌트 코드를 수정할 필요가 없습니다.
 - 논문 그림(선택): `content/publications.ts`의 `image`, `imageAlt`. 데스크톱에서는 항목 왼쪽, 720px 이하에서는 제목 위에 표시됩니다. 이미지가 없는 논문은 텍스트만으로 전체 너비를 사용합니다.
 - 경로가 비어 있으면 이미지 자리가 생기지 않습니다. `npm run dev`에서는 `site.showMediaSlots=true`일 때 점선으로 삽입 위치가 표시되고, 배포 빌드에는 나오지 않습니다.
 - 권장 형식: JPG 또는 WebP, 가로 1600px 이하, 파일당 500KB 이하.
@@ -105,7 +104,7 @@
 `content/cv.ts`의 `education` 배열에서 학위를 각각 관리합니다. `date`에는 실제 재학 기간을 적습니다. 공개 가능한 학부논문은 `thesis.title`, 지도교수는 `advisorId`로 지정합니다. 석사논문은 현재 비공개이므로 입력하지 마세요. 링크가 있으면 논문 링크는 `thesis.url`에, 지도교수 링크는 `content/advisors.ts`에 넣으세요. 현재 빈 값은 미확인 정보이며 화면에 임시 문구를 출력하지 않습니다. 박사 재학은 candidacy를 의미하지 않습니다.
 
 ## News
-`content/news.ts`에서 `date`, `text`, 선택적인 `links`를 입력합니다. 날짜는 `YYYY`, `YYYY-MM`, `YYYY-MM-DD` 중 확인된 정밀도로 적고, 최신 항목부터 자동 정렬됩니다. 최근 3개 이후에는 Earlier news로 접힙니다. 빈 배열이면 섹션과 메뉴가 함께 숨겨집니다. 발표·출판·수상·강연처럼 확인된 소식만 기록하세요.
+`content/news.ts`에서 `date`, `text`, 선택적인 `links`를 입력합니다. 날짜는 `YYYY`, `YYYY-MM`, `YYYY-MM-DD` 중 확인된 정밀도로 적고, 최신 항목부터 자동 정렬됩니다. 홈에는 최근 5개가 표시되고 View all news가 /news/ 전체 목록으로 연결됩니다. 빈 배열이면 섹션과 메뉴가 함께 숨겨집니다. 발표·출판·수상·강연처럼 확인된 소식만 기록하세요.
 
 ## 모션과 접근성
 `components/page-motion.tsx`는 작은 진입 모션만 담당합니다. 초기 콘텐츠를 숨기지 않으므로 JavaScript 없이도 본문을 읽을 수 있습니다. `prefers-reduced-motion`에서는 진입·스크롤·호버 이동을 끕니다. 메뉴의 현재 섹션은 밑줄과 aria-current로 표시합니다.
@@ -151,3 +150,11 @@
 - Thermal Crossing 수락 2026.08, IxDA 선정 2023.03, DNA-HERO 수상 2022.12. Soundinity 수행 기간 2022.06–12.
 
 - `npm run build`는 기존 생성물 `out/`을 먼저 비웁니다. 삭제한 상세 페이지가 이전 빌드에서 남는 것을 방지합니다.
+
+## v0.13.0 UI와 편집 위치
+- 하단 About은 프로필에 통합했습니다. 배경 문단과 Personal 문장은 `content/home.ts`의 `profileBackground`, 연구 관심사는 `research`에서 수정합니다.
+- 프로필의 CV와 상단 CV 메뉴는 모두 `/cv/`로 연결됩니다. CV 페이지의 Curriculum Vitae (PDF) 버튼만 `content/site.ts`의 `links.cvPdf`를 사용합니다.
+- News는 `content/news.ts`의 `newsDisplay.limit`(기본 5)개를 홈에 표시하고, `archiveLabel`로 전체 목록 링크 문구를 바꿉니다. `/news/`도 같은 데이터를 쓰므로 이중 입력하지 않습니다.
+- Publications 메뉴와 섹션명을 통일했습니다. 연도별 카드에 티저, 제목, 저자, 학회·상태, 주제, 자료 링크 순으로 배치합니다. PDF CV의 서지 내용은 변경하지 않았습니다.
+- 연구 관심사는 현재 방향을 나타내는 텍스트입니다. 미공개 작업을 설명하는 도식이나 빈 Research Roadmap 영역은 만들지 않았습니다.
+

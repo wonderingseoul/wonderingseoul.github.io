@@ -1,3 +1,4 @@
+import { profileBackground, research } from "@/content/home";
 import { site } from "@/content/site";
 import { SocialLinks } from "@/components/social-links";
 import { OptionalImage } from "@/components/optional-image";
@@ -26,6 +27,11 @@ export function Hero() {
         </p>
         <p className="profile-intro">{site.introduction}</p>
         <SocialLinks />
+        <div className="profile-background">
+          {profileBackground.paragraphs.map((text) => <p key={text}>{text}</p>)}
+          {profileBackground.personalText && <p className="profile-personal">{profileBackground.personalText}</p>}
+        </div>
+        {research.areas.length > 0 && <div className="profile-interests"><p>{research.title}</p><ul>{research.areas.map((area) => <li key={area.title}>{area.title}</li>)}</ul></div>}
       </div>
     </section>
   );

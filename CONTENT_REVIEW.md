@@ -108,3 +108,11 @@
 - SKKU Undergraduate PBL Course Project Competition 장려상: 2022.01.
 - year/date/sortDate를 함께 반영하여 연도 그룹과 최신순 정렬을 일치시킴.
 - EDITING.md 앞부분에 파일별 편집 위치, 추가/숨김/삭제, 날짜 필드와 PDF 별도 갱신 안내 추가.
+
+## v0.13.0 UI 리뷰 반영
+- 사용자 제공 6개 스크린샷과 Sang Ho Yoon, Seonji Kim, Jinwook Kim, Juyoung Lee 사이트를 참고. 타인의 도식/논문 이미지는 복사하지 않음.
+- About의 배경/Personal 소개를 프로필에 통합. 별도 About 메뉴와 선택 이미지 공간 제거.
+- 메뉴 Publications 통일, CV 진입점 /cv/ 통일, PDF 다운로드 버튼을 CV 페이지에 배치.
+- 홈 News 5개 + 전체 목록 페이지. 데이터는 하나의 news 배열을 공유.
+- 공개 논문 3편에 맞게 검색/통계/필터 없이 제목·저자·학회·상태·주제·자료 링크의 위계를 정리.
+- 연구 도식은 보류. 확인된 연구 관심사만 표시하며 미공개 연구를 추가하지 않음.

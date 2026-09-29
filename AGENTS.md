@@ -1,7 +1,7 @@
 # Website maintenance
 
 - Keep the Next.js + Tailwind + GitHub Pages static-export stack. No databases, CMS, runtime APIs, or new dependencies unless the user asks.
-- The site is one home page (profile → news → publications → projects → about) plus project detail pages and a CV page. Do not add archive or listing pages unless content volume calls for it.
+- The site is one home page (profile (including background) → news → publications → projects) plus project detail pages, a CV page and a user-requested News archive. Home shows only the latest five News items.
 - Editable copy and records live in `content/`; do not duplicate them inside components.
 - Home section order and menu labels: `content/home.ts`. Extra menu items: `content/navigation.ts`. Project registration and order: `content/projects/index.ts`. A project with `visible: false` must not have an exported page or internal links.
 - Publications are a single list sorted by year; use topic tags, separate status badges and resource links; omit summaries and page ranges.

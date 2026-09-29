@@ -7,6 +7,7 @@ import { Education } from "@/components/education";
 import { CVSections } from "@/components/cv-sections";
 import { PublicationList } from "@/components/publication-list";
 import { publications } from "@/content/publications";
+import { assetPath } from "@/lib/assets";
 import { SocialLinks } from "@/components/social-links";
 
 export const metadata: Metadata = { title: cv.title };
@@ -18,7 +19,8 @@ export default function CV() {
         <p className="eyebrow">{cv.title}</p>
         <h1>{site.name}</h1>
         <p className="subtitle">{cv.subtitle}</p>
-        <SocialLinks />
+        <SocialLinks showCV={false} />
+        {site.links.cvPdf && <a className="cv-pdf-button" href={assetPath(site.links.cvPdf)} download>Curriculum Vitae (PDF) <span aria-hidden="true">↓</span></a>}
       </header>
       {site.bio && (
         <section className="section">

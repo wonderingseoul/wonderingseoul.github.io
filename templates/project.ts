@@ -7,7 +7,7 @@ import type { Project } from "@/content/types";
 // CV 경력 섹션의 groupByYear=false는 왼쪽 연도 없이 기간만 표시합니다.
 // CV의 수행 기간과 수상 시점은 content/cv.ts에서 별도 기록하고 relatedEntryId로 연결합니다.
 // 지도교수 링크는 content/advisors.ts에서 관리합니다. CV 프로젝트는 간결한 설명으로 유지합니다.
-// About 그림은 프로젝트와 별개로 content/home.ts의 aboutStory.image에서 설정합니다.
+// 프로필 배경 소개는 content/home.ts의 profileBackground에서 관리합니다.
 const project: Project = {
   slug: "my-project", // 주소에 쓰입니다. 영문 소문자·숫자·하이픈, 중복 금지.
   category: "creative", // research / creative / course
