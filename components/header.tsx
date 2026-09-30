@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
+import { assetPath } from "@/lib/assets";
 import { site } from "@/content/site";
 import { menuItems } from "@/lib/content";
 export function Header() {
@@ -16,7 +17,7 @@ export function Header() {
     return () => observer.disconnect();
   }, [pathname]);
   return <header className="site-header"><div className="wrap header-inner">
-    <Link className="wordmark" href="/">{site.name}<span aria-hidden="true">.</span></Link>
+    <Link className="wordmark" href="/"><img className="brand-logo" src={assetPath(site.logo)} width="22" height="20" alt="" aria-hidden="true" /><span className="wordmark-name">{site.name}<span className="wordmark-period" aria-hidden="true">.</span></span></Link>
     <nav aria-label="Main navigation">{menuItems.map((item) => <Link key={item.href} href={item.href} aria-current={item.href === pathname ? "page" : pathname === "/" && item.href === `/#${active}` ? "location" : undefined}>{item.label}</Link>)}</nav>
   </div></header>;
 }

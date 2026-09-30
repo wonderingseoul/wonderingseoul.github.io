@@ -3,6 +3,8 @@ export const site = {
   name: "Hyung Wook Yi",
   authorNames: ["Hyung Wook Yi", "이형욱"],
   // 프로필 사진(선택). public/images/profile.jpg에 파일을 두고 "/images/profile.jpg"로 적습니다.
+  // 상단 로고. public/brand/logo.svg를 교체하면 됩니다.
+  logo: "/brand/logo.svg",
   portrait: "/images/profile.jpg",
   portraitAlt: "Portrait of Hyung Wook Yi",
   // npm run dev에서만 이미지 삽입 위치 표시. 빌드 결과에는 표시하지 않습니다.
@@ -23,6 +25,6 @@ export const site = {
   },
   language: "en",
   titleSuffix: "Sensor Fabrication & Sensing Toolkits",
-  footerText: "Sensor fabrication · Sensing toolkits",
+  footerText: "",
   cvEnabled: true,
 };

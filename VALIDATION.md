@@ -1,3 +1,12 @@
+# v0.14.0 validation
+
+- npm run build and npm run typecheck passed using existing project dependencies.
+- Home, CV, News and Soundinity tested at 320, 390, 768 and 1360px. No horizontal overflow, page JavaScript errors or failed local resources.
+- Header logo decoded on all routes; desktop and mobile screenshots inspected.
+- SVG/ICO and Apple icon metadata resolved with HTTP 200. ICO contains 16/32/48px sizes. SVG switches to white geometry for dark browser preference.
+- Final 1a vector geometry preserved; compact 16px B used for favicon. Footer keywords hidden through editable site setting.
+- PDF CV and research records unchanged. No remote deployment performed.
+
 # v0.13.1 validation
 
 - npm run build and npm run typecheck passed.

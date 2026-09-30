@@ -23,7 +23,10 @@ h3 { font-size: 1.12rem; } p { max-width: var(--measure); }
 .site-header { position: sticky; top: 0; z-index: 20; background: var(--paper); border-bottom: 1px solid var(--line); }
 .header-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px 28px; min-height: 78px; padding-block: 14px; }
 .wordmark { font-weight: 650; font-size: 1rem; letter-spacing: -.03em; white-space: nowrap; }
-.wordmark span { color: var(--accent); }
+.wordmark { display: inline-flex; align-items: center; gap: 6px; }
+.brand-logo { width: 22px; height: 20px; flex-shrink: 0; }
+.wordmark .wordmark-name { color: inherit; }
+.wordmark-period { color: #d9642a; }
 nav { display: flex; flex-wrap: wrap; gap: 4px 24px; font-size: .875rem; color: var(--muted); }
 nav a { position: relative; padding: 8px 0; }
 nav a::after { content: ""; position: absolute; bottom: 1px; left: 0; width: 100%; height: 2px; background: var(--accent); transform: scaleX(0); transform-origin: left; transition: transform .2s; }

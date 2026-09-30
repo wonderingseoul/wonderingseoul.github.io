@@ -163,3 +163,10 @@
 
 - 첫 메뉴 Home은 `content/navigation.ts`의 `homeNavigation`에서 이름과 노출 여부를 수정합니다. `/#home`은 메인 프로필로 이동합니다.
 - 논문 상태의 `Status | Accepted` 구분선은 `components/publication-list.tsx`, 색상은 `app/theme.css`의 `.publication-status-divider`에서 관리합니다.
+
+## v0.14.0: 로고와 푸터
+
+- 상단 로고 경로: `content/site.ts`의 `logo`. 원본 벡터 파일은 `public/brand/logo.svg`. 최종 1a(세로획 60) 비율을 사용합니다.
+- `public/brand/`에 밝은/어두운 배경용, 단색 버전과 파비콘 벡터가 있습니다.
+- 브라우저 아이콘: `public/favicon.svg`(16px B안, 어두운 탭 색상 자동 대응), `favicon.ico`(16/32/48px). 수정 시 PNG/ICO도 함께 갱신하세요. Apple 아이콘은 `apple-touch-icon.png`. 연결은 `app/layout.tsx`에서 관리합니다.
+- 푸터 키워드는 `content/site.ts`의 `footerText`를 빈 문자열로 설정해 숨겼습니다. 소개 및 연구 관심 분야는 유지합니다.

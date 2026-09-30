@@ -22,7 +22,13 @@ export const metadata: Metadata = {
     template: `%s — ${site.name}`,
   },
   description: site.introduction,
-  icons: { icon: assetPath("/favicon.svg") },
+  icons: {
+    icon: [
+      { url: assetPath("/favicon.ico"), sizes: "16x16 32x32 48x48" },
+      { url: assetPath("/favicon.svg"), type: "image/svg+xml", sizes: "any" },
+    ],
+    apple: { url: assetPath("/apple-touch-icon.png"), sizes: "180x180", type: "image/png" },
+  },
 };
 export default function RootLayout({
   children,
@@ -40,7 +46,7 @@ export default function RootLayout({
           <span>
             © {new Date().getFullYear()} {site.name}
           </span>
-          <span>{site.footerText}</span>
+          {site.footerText && <span>{site.footerText}</span>}
           <Link href="/">Back to top ↑</Link>
         </footer>
       </body>
