@@ -13,10 +13,15 @@ export const publications: Publication[] = [
     "tags": [
       "thermal-haptics"
     ],
-    "status": "Accepted",
     "image": "/images/publications/thermal-crossing.png",
     "imageAlt": "Palm-free thermal device layout and the perceived warmth area created through thermal referral.",
-    "links": [],
+    "links": [
+      {
+        "label": "DOI",
+        "href": "https://dl.acm.org/doi/abs/10.1145/3830727.3834812",
+        "kind": "doi"
+      }
+    ],
     "venueUrl": "https://www.ubicomp.org/ubicomp-iswc-2026/"
   },
   {
