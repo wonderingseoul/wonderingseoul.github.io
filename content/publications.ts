@@ -53,16 +53,16 @@ export const publications: Publication[] = [
   },
   {
     "id": "llm-game-npc",
-    "title": "LLM을 활용한 게임 NPC 연구의 도전과 기회: 주제범위 문헌고찰",
+    "title": "Challenges and Opportunities of Game NPC Research Using LLM: A Scoping Review",
     "authors": [
-      "박은별",
-      "채지훈",
-      "김기락",
-      "이형욱",
+      "Eunbyul Park",
+      "Jihun Chae",
+      "Kirak Kim",
+      "Hyung Wook Yi",
       "Maryam Khalid Lootah",
-      "도영임"
+      "Young Yim Doh"
     ],
-    "venue": "한국게임학회 춘계학술대회",
+    "venue": "Korean Game Society",
     "year": "2024",
     "tags": [
       "llm",
